@@ -121,10 +121,10 @@ def collate_batch(
         token_ids_tgt = tokenizer(
             f'{example[tgt_key]}<eos_{tgt_key}>')['input_ids']
 
-        # COPY FROM ASSIGN2_5
+        # COPY FROM ASSIGN3_4
         raise NotImplementedError("Collate Function Not Implemented Yet")
 
-    # COPY FROM ASSIGN2_5
+    # COPY FROM ASSIGN3_4
     raise NotImplementedError("Collate Function Not Implemented Yet")
 
     return {
@@ -152,7 +152,7 @@ def loss_fn(batch, model):
     logits = model(idx=idx)
     batch_size, seq_len, vocab_size = logits.shape
     
-    # COPY FROM ASSIGN2_5
+    # COPY FROM ASSIGN3_4
     raise NotImplementedError("Loss Function Not Implemented Yet")
 
 

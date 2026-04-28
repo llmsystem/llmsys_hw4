@@ -44,7 +44,7 @@ class MultiHeadAttention(Module):
         self.causal    = causal
         self.attn_hidden_dim = n_embd // n_head
 
-        # COPY FROM ASSIGN2_4
+        # COPY FROM ASSIGN3_3
         raise NotImplementedError
 
     def create_causal_mask(self, bs, nh, seq_len):
@@ -68,7 +68,7 @@ class MultiHeadAttention(Module):
         """
         batch_size, seq_len, n_embd = x.shape
         
-        # COPY FROM ASSIGN2_4
+        # COPY FROM ASSIGN3_3
         raise NotImplementedError
         
         return q, kT, v
@@ -95,12 +95,12 @@ class MultiHeadAttention(Module):
         result = None
         
         if not self.use_fused_kernel:
-            # COPY FROM ASSIGN2_4
+            # COPY FROM ASSIGN3_3
             raise NotImplementedError
         else:
-            # BEGIN ASSIGN3_3
+            # BEGIN ASSIGN4_3
             raise NotImplementedError
-            # END ASSIGN3_3
+            # END ASSIGN4_3
 
         return result
 
@@ -114,7 +114,7 @@ class MultiHeadAttention(Module):
             output : Tensor of shape (batch_size, seq_len, embedding_dim)
         """
         batch_size, seq_len, n_embd = x.shape
-        # COPY FROM ASSIGN2_4
+        # COPY FROM ASSIGN3_3
         raise NotImplementedError
 
 
@@ -134,7 +134,7 @@ class FeedForward(Module):
             linear_out : second linear layer
             dropout    : dropout layer
         """
-        # COPY FROM ASSIGN2_4
+        # COPY FROM ASSIGN3_3
         raise NotImplementedError
 
     def forward(self, x):
@@ -148,7 +148,7 @@ class FeedForward(Module):
         """
         batch_size, seq_len, n_embd = x.shape
 
-        # COPY FROM ASSIGN2_4
+        # COPY FROM ASSIGN3_3
         raise NotImplementedError
 
         return x
@@ -172,21 +172,21 @@ class TransformerLayer(Module):
             ff : FeedForward layer
         """
         
-        # COPY FROM ASSIGN2_4
+        # COPY FROM ASSIGN3_3
         # self.attention
         # self.ff
         raise NotImplementedError
 
         self.use_fused_kernel = use_fused_kernel
         if not self.use_fused_kernel:
-            # COPY FROM ASSIGN2_4
+            # COPY FROM ASSIGN3_3
             # self.ln_1
             # self.ln_2
             raise NotImplementedError
         else:
-            # BEGIN ASSIGN3_3
+            # BEGIN ASSIGN4_3
             raise NotImplementedError
-            # END ASSIGN3_3
+            # END ASSIGN4_3
 
     def forward(self, x):
         """
@@ -197,12 +197,12 @@ class TransformerLayer(Module):
         batch_size, seq_len, x_dim = x.shape
         
         if not self.use_fused_kernel:
-            # COPY FROM ASSIGN2_4
+            # COPY FROM ASSIGN3.3
             raise NotImplementedError
         else:
-            # BEGIN ASSIGN3_3
+            # BEGIN ASSIGN4_3
             raise NotImplementedError
-            # END ASSIGN3_3
+            # END ASSIGN4_3
 
         return x
 
@@ -247,7 +247,7 @@ class DecoderLM(Module):
         self.n_embd              = n_embd
         self.n_vocab             = n_vocab
         
-        # COPY FROM ASSIGN2_4
+        # COPY FROM ASSIGN3_3
         # self.token_embeddings    = 
         # self.position_embeddings = 
         # self.t_layer_1           = 
@@ -260,13 +260,13 @@ class DecoderLM(Module):
 
         self.use_fused_kernel = use_fused_kernel
         if not self.use_fused_kernel:
-            # COPY FROM ASSIGN2_4
+            # COPY FROM ASSIGN3_3
             # self.ln                  = 
             raise NotImplementedError
         else:
-            # BEGIN ASSIGN3_3
+            # BEGIN ASSIGN4_3
             raise NotImplementedError
-            # END ASSIGN3_3
+            # END ASSIGN4_3
         
     def forward(self, idx):
         """A Forward pass of a Decoder-only Transformer Language model.
@@ -281,11 +281,11 @@ class DecoderLM(Module):
         pos = tensor([i for i in range(seq_len)], backend=self.backend).view(1, seq_len)
 
         if not self.use_fused_kernel:
-            # COPY FROM ASSIGN2_4
+            # COPY FROM ASSIGN3_3
             raise NotImplementedError
         else:
-            # BEGIN ASSIGN3_3
+            # BEGIN ASSIGN4_3
             raise NotImplementedError
-            # END ASSIGN3_3
+            # END ASSIGN4_3
 
         return x

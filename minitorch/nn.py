@@ -187,7 +187,6 @@ def dropout(input: Tensor, rate: float, ignore: bool = False) -> Tensor:
 
 
 def layer_norm(input: Tensor, eps: float = 1e-5) -> Tensor:
-    # ASSIGN4.4
     
     # Calculate mean and variance along the last axis (features)
     batch, channel, height, width = input.shape
@@ -198,18 +197,12 @@ def layer_norm(input: Tensor, eps: float = 1e-5) -> Tensor:
     input_normalized = (input - mean) / (variance + eps)
     return input_normalized
 
-    # END ASSIGN4.4
-
-
-###############################################################################
-# Assignment 2 Problem 2
-###############################################################################
 
 def GELU(input: Tensor) -> Tensor: 
     """Applies the GELU activation function with 'tanh' approximation element-wise
     https://pytorch.org/docs/stable/generated/torch.nn.GELU.html
     """
-    # COPY FROM ASSIGN2_2
+    # COPY FROM ASSIGN3_1
     raise NotImplementedError
 
 
@@ -225,7 +218,7 @@ def logsumexp(input: Tensor, dim: int) -> Tensor:
         out : The output tensor with the same number of dimensions as input (equiv. to keepdims=True)
             NOTE: minitorch functions/tensor functions typically keep dimensions if you provide a dimensions.
     """  
-    # COPY FROM ASSIGN2_2
+    # COPY FROM ASSIGN3_1
     raise NotImplementedError
 
 
@@ -236,7 +229,7 @@ def one_hot(input: Tensor, num_classes: int) -> Tensor:
 
     Hint: You may want to use a combination of np.eye, tensor_from_numpy, 
     """
-    # COPY FROM ASSIGN2_2
+    # COPY FROM ASSIGN3_1
     raise NotImplementedError
 
 
@@ -253,7 +246,7 @@ def softmax_loss(logits: Tensor, target: Tensor) -> Tensor:
     """
     result = None
     
-    # COPY FROM ASSIGN2_2
+    # COPY FROM ASSIGN3_1
     raise NotImplementedError
     
     return result.view(batch_size, )
