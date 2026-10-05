@@ -29,7 +29,7 @@ inp: [batch_size, nhead, from_len, to_len], softmax input.
 attn_mask: [batch_size, to_len], padding tokens are -inf,
   non padding tokens are 0.
   attn_mask!=nullptr for enc-self-attn and enc-dec-attn
-  attn_mask=nullptr and mask_future=ture for dec-self-attn training
+  attn_mask=nullptr and mask_future=true for dec-self-attn training
   attn_mask=nullptr and mask_future=false for dec-self-attn infer
 */
 template <typename T, int block_dim, int ele_per_thread>
